@@ -16,7 +16,7 @@ import com.api.marvel.model.Results;
 @Controller
 public class ApiMarvelConsumer {
 	
-	
+	//seleção das variaveis 
 	
 	String publicKey = "ce97fad4a20c632bde78b471943aac47";
 	
