@@ -1,0 +1,97 @@
+body{
+	background-color: #d6d6c5;
+	color: #000;
+	font-family: arial;
+	
+}
+
+label{
+	
+	font-size: 25px;
+	
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	
+}
+
+input{
+	
+	width: 250px;
+	
+	height: 25px;
+	
+	border-radius: 15px;
+	
+	
+}
+
+
+button{
+	
+	height: 30px;
+	
+	border-radius: 10px;
+	
+}
+
+button:hover{
+	
+	background-color: grey;
+	
+	
+	
+}
+
+a{
+	text-decoration: none;
+	
+	color: #fff;
+	
+	text-align: center;
+	
+	
+}
+
+header{
+	background-color: red;
+	
+	height: 150px;
+	
+	border-bottom: solid black 2px;
+}
+
+.externalDiv{
+	border: solid black;
+	
+	border-radius: 10px;
+	
+	margin: 25px;
+	
+	width: 600px;
+	
+	
+}
+
+.externalDiv label{
+	text-align:center;
+	
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	
+	border-bottom: solid grey 2px;
+	
+	border-width: 100%;
+	
+}
+
+.externalDiv img{
+	width: 600px;
+	
+	height: 550px;
+	
+	
+}
+
+.externalDiv p{
+	
+	font-family: Bradley Hand, cursive;
+	
+}

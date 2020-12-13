@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html
+ xmlns:th="http://thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Personagem</title>
+<link rel="stylesheet" href="styleCharacters.css" />
+</head>
+<body>
+<header>
+  <a class="links" href="/"><h1>HEROIS MARVEL</h1></a>
+   <form method="post"  action="buscar">
+   <label>Buscar</label>
+      <input type="text" name="buscar" required/> 
+      <button type="submit">Procurar</button>
+    
+  </form>
+  </header>
+  
+  <div class="externalDiv" th:each="list : ${array}">
+  
+    <img th:src="${list.thumbnail.path}"/><br/>
+        <label th:text="${list.name}"></label> 
+        <p th:text="${list.description}"/>
+      
+  </div>
+  <h2 th:text="${hasError}"></h2>
+  
+</body>
+</html>
