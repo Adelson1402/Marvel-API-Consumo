@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
@@ -24,7 +25,7 @@ public class ApiMarvelConsumer {
 	
 	String finalHash = "5217adf0ea0dd8d977e005be283d9115";
 	
-	String baseUrl = "http://gateway.marvel.com/v1/public/characters?limit=100&ts=1&apikey=ce97fad4a20c632bde78b471943aac47&hash=5217adf0ea0dd8d977e005be283d9115";
+	String baseUrl = "http://gateway.marvel.com/v1/public/characters?limit=30&ts=1&apikey=ce97fad4a20c632bde78b471943aac47&hash=5217adf0ea0dd8d977e005be283d9115";
 	
 	
 	
@@ -38,7 +39,7 @@ public class ApiMarvelConsumer {
 		
 		
 	
-	
+	//retorna uma pagina inicial com um limite de personagens definido pelo parâmetro "limit=" na baseUrl.
 	@RequestMapping(value="/")
 	public ModelAndView retornaArrayDeNomesDeHerois() {
 		
@@ -50,7 +51,6 @@ public class ApiMarvelConsumer {
 			
 			
 			List<Results> nomeCharacter = arrayDeHerois.getBody().getData().getResults();
-			
 			
 			String imageThumb = arrayDeHerois.getBody().getData().getResults().get(18).getThumbnail().getPath();
 			
@@ -71,7 +71,7 @@ public class ApiMarvelConsumer {
 		
 		
 	}
-	
+	//Busca um personagem pelo começo do nome
 	@RequestMapping(value="/buscar")
 	public ModelAndView buscaPersonagem(@RequestParam("buscar") String nomeCharacterBusca ) {
 		
@@ -94,5 +94,29 @@ public class ApiMarvelConsumer {
 		return mvc;
 		
 	}
+	
+	//Retorna as series relacionadas ao personagem clicado buscando pelo "id"
+	@RequestMapping(value="/series")
+	public ModelAndView seriesRelacionadas(int idPersonagem) {
+		
+		String urlSeries = "http://gateway.marvel.com/v1/public/characters/" + idPersonagem + "/series?limit=100&ts=1&apikey=ce97fad4a20c632bde78b471943aac47&hash=5217adf0ea0dd8d977e005be283d9115";
+		
+		ModelAndView mvc = new ModelAndView("characters");
+		
+		ResponseEntity<DataModel> responseSeries = restTemplate.getForEntity(urlSeries, DataModel.class);
+		
+		List<Results> resultadoSeries = responseSeries.getBody().getData().getResults();
+		
+		if(responseSeries.getBody().getData().getCount() == 0) {
+			String hasError = "Nenhum Quadrinho encontrado :,(";
+			mvc.addObject("hasError", hasError );
+			
+		}
+		
+		mvc.addObject("series", resultadoSeries);
+		
+		return mvc;
+	}
+	
 	
 }

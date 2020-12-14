@@ -11,6 +11,7 @@ label{
 	
 	font-family: Comic Sans MS, Comic Sans, cursive;
 	
+	margin-left: 10px;
 }
 
 input{
@@ -27,7 +28,7 @@ input{
 
 button{
 	
-	height: 30px;
+	height: 40px;
 	
 	border-radius: 10px;
 	
@@ -54,24 +55,48 @@ a{
 header{
 	background-color: red;
 	
-	height: 150px;
+	height: 135px;
+	
+	width: 100%;
 	
 	border-bottom: solid black 2px;
+	
+	position: fixed;
+	
+	top: 0;
+	
+	left: 0;
+	
+	
 }
 
-.externalDiv{
+.externalList {
 	border: solid black;
 	
 	border-radius: 10px;
 	
 	margin: 25px;
 	
+	padding-top: 18px;
+	
 	width: 600px;
 	
+	margin-top: 5%;
+	
+	list-style-type: none;
+	
+	float: left;
+	
+	padding: 0px;
+}
+
+.responsiveDiv{
+	
+	margin-top: 200px;
 	
 }
 
-.externalDiv label{
+.externalList  label{
 	text-align:center;
 	
 	font-family: Comic Sans MS, Comic Sans, cursive;
@@ -80,18 +105,147 @@ header{
 	
 	border-width: 100%;
 	
+	color: red;
 }
 
-.externalDiv img{
+.externalList  img{
 	width: 600px;
 	
 	height: 550px;
 	
 	
+	
 }
 
-.externalDiv p{
+.externalList  p{
 	
 	font-family: Bradley Hand, cursive;
+	
+}
+h2{
+	
+	margin-top: 10%;
+	
+}
+
+@media(max-width: 600px){
+	
+	.externalList  img{
+	   width: 400px;
+	
+	height: 390px;
+	
+	
+	}
+	
+	.externalList {
+	border: solid black;
+	
+	border-radius: 10px;
+	
+	margin: 25px;
+	
+	padding-top: 18px;
+	
+	width: 400px;
+	
+	margin-top: 5%;
+	
+	 
+	
+}
+
+.externalList label{
+	text-align:center;
+	
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	
+	border-bottom: solid grey 2px;
+	
+	border-width: 100%;
+	
+	font-size: 20px;
+}
+h2{
+	
+	margin-top: 29%;
+	
+}
+
+.responsiveDiv{
+	
+	margin-top: 200px;
+	
+}
+
+
+
+
+}
+
+.series img{
+	
+	height: 550px;
+	
+	width: 400px;
+	
+	border-radius: 10px;
+	
+	border: solid #000 2px;
+	
+	
+}
+
+.series img:hover{
+	
+	background-color: grey;
+	
+}
+
+.series{
+	float: left;
+	
+	margin-top: auto;
+	
+}
+.series ul li{
+	list-style-type: none;
+	
+}
+
+.series ul li label{
+	font-size: 18px;
+	
+	
+}
+
+.bordaSeries{
+	border: none;
+	
+	width: 410px;
+	
+	
+}
+
+footer{
+	clear: both;
+	
+    position: relative;
+    
+    height: 50px;
+    
+    margin-top: 50px;
+    
+    bottom: 0;
+    
+    padding-bottom: 30px;
+    
+    text-align: center; 
+    
+    background-color: #ff8080;
+    
+    
+	
+	
 	
 }
