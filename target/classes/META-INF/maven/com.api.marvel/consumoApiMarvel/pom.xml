@@ -11,6 +11,7 @@
 	<groupId>com.api.marvel</groupId>
 	<artifactId>consumoApiMarvel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>consumoApiMarvel</name>
 	<description>consumo de API marvel com springboot e Thymeleaf</description>
 
