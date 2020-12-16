@@ -66,26 +66,6 @@
 	
 		
 	</dependencies>
-	<profiles>
-<profile>
-  <id>demo-compile-to-java-8</id>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-	     <groupId>org.springframework.boot</groupId>
-	      <artifactId>maven-compiler-plugin</artifactId>
-	      <configuration>
-	       <source>1.8</source>
-	       <target>1.8</target>
-	      </configuration>
-	    </plugin>
-		</plugins>
-		
-	</build>
-</profile>
-</profiles>
+	
+
 </project>
