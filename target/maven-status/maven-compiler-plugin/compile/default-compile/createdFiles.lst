@@ -1,0 +1,8 @@
+com\api\marvel\model\DataModel.class
+com\api\marvel\model\Results.class
+com\api\marvel\model\Thumbnail.class
+com\api\marvel\model\Data.class
+com\api\marvel\model\Characters.class
+com\api\marvel\model\CharactersEntity.class
+com\api\marvel\consumoApiMarvel\ConsumoApiMarvelApplication.class
+com\api\marvel\controller\ApiMarvelConsumer.class
