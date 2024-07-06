@@ -19,7 +19,7 @@ FROM openjdk:11-jdk-slim
 EXPOSE 8080
 
 # Copiar o arquivo jar gerado da etapa de construção
-COPY --from=build /app/target/consumoApiMarvel-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY --from=build /target/consumoApiMarvel-0.0.1-SNAPSHOT.jar /app/app.jar
 
 # Definir o ponto de entrada para executar a aplicação
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
