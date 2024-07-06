@@ -1,5 +1,5 @@
 # Etapa de construção
-FROM ubuntu:latest AS build
+FROM  maven:3.8.2-jdk-11 AS build AS build
 
 # Atualizar e instalar o JDK e Maven
 RUN apt-get update && \
@@ -13,7 +13,7 @@ WORKDIR /app
 RUN mvn clean install
 
 # Etapa de execução
-FROM openjdk:17-jdk-slim
+FROM openjdk:11-jdk-slim
 
 # Expor a porta 8080
 EXPOSE 8080
