@@ -1,10 +1,6 @@
 # Etapa de construção
 FROM  maven:3.8.5-openjdk-17 AS build
 
-# Atualizar e instalar o JDK e Maven
-RUN apt-get update && \
-    apt-get install -y openjdk-17-jdk maven
-
 # Copiar todo o código para o contêiner
 COPY . .
 WORKDIR /app
