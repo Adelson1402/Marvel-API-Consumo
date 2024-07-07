@@ -3,7 +3,6 @@ FROM  maven:3.8.5-openjdk-17 AS build
 
 # Copiar todo o código para o contêiner
 COPY . .
-WORKDIR /app
 
 # Construir a aplicação
 RUN mvn clean package -DskipTests
@@ -15,7 +14,7 @@ FROM openjdk:17.0.1-jdk-slim
 EXPOSE 10000
 
 # Copiar o arquivo jar gerado da etapa de construção
-COPY --from=build /target/consumoApiMarvel-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY --from=build /target/consumoApiMarvel-0.0.1-SNAPSHOT.jar /app.jar
 
 # Definir o ponto de entrada para executar a aplicação
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
