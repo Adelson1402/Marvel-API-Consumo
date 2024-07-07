@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y openjdk-17-jdk maven
 
 # Copiar todo o código para o contêiner
-COPY . /app
+COPY . .
 WORKDIR /app
 
 # Construir a aplicação
