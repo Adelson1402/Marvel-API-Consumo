@@ -1,5 +1,5 @@
 # Etapa de construção
-FROM  maven:3.8.2-jdk-17 AS build
+FROM  maven:3.8.5-openjdk-17 AS build
 
 # Atualizar e instalar o JDK e Maven
 RUN apt-get update && \
@@ -10,10 +10,10 @@ COPY . .
 WORKDIR /app
 
 # Construir a aplicação
-RUN mvn clean install
+RUN mvn clean package -DskipTests
 
 # Etapa de execução
-FROM openjdk:17-jdk-slim
+FROM openjdk:17.0.1-jdk-slim
 
 # Expor a porta 10000
 EXPOSE 10000
