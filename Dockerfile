@@ -15,8 +15,8 @@ RUN mvn clean install
 # Etapa de execução
 FROM openjdk:11-jdk-slim
 
-# Expor a porta 8080
-EXPOSE 8080
+# Expor a porta 10000
+EXPOSE 10000
 
 # Copiar o arquivo jar gerado da etapa de construção
 COPY --from=build /target/consumoApiMarvel-0.0.1-SNAPSHOT.jar /app/app.jar
