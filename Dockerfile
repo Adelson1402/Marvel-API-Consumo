@@ -1,5 +1,5 @@
 # Etapa de construção
-FROM  maven:3.8.2-jdk-11 AS build AS build
+FROM  maven:3.8.2-jdk-11 AS build
 
 # Atualizar e instalar o JDK e Maven
 RUN apt-get update && \
